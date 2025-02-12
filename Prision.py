@@ -29,3 +29,16 @@ cursor.execute('''
         FOREIGN KEY (id_superviviente) REFERENCES Supervivientes(id)
     )
 ''')
+
+#Tabla vehiculos
+
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS Vehiculos (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        marca TEXT,
+        modelo TEXT,
+        año INTEGER,
+        id_superviviente INTEGER,
+        FOREIGN KEY (id_superviviente) REFERENCES Supervivientes(id)
+    )
+''')
