@@ -42,3 +42,18 @@ cursor.execute('''
         FOREIGN KEY (id_superviviente) REFERENCES Supervivientes(id)
     )
 ''')
+
+#Tabla Armas
+
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS Armas (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        tipo TEXT,
+        modelo TEXT,
+        municion INTEGER,
+        id_superviviente INTEGER,
+        FOREIGN KEY (id_superviviente) REFERENCES Supervivientes(id)
+    )
+''')
+
+conexion.commit()
