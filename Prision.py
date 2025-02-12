@@ -16,3 +16,16 @@ cursor.execute('''
         estado TEXT
     )
 ''')
+
+#Tabla suministros
+
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS Suministros (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        nombre TEXT NOT NULL,
+        cantidad INTEGER,
+        tipo TEXT,
+        id_superviviente INTEGER,
+        FOREIGN KEY (id_superviviente) REFERENCES Supervivientes(id)
+    )
+''')
