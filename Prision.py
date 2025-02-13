@@ -57,3 +57,16 @@ cursor.execute('''
 ''')
 
 conexion.commit()
+
+# Función genérica para ejecutar consultas con control de transacciones
+def ejecutar_consulta(query, parametros=()):
+    conexion = conectar_bd()
+    try:
+        with conexion:  # Maneja automáticamente el commit y el rollback en caso de error
+            cursor = conexion.cursor()
+            cursor.execute(query, parametros)
+            if query.strip().upper().startswith("SELECT"):
+                return cursor.fetchall()
+    except sqlite3.Error as e:
+        print(f"Error en la consulta: {e}")
+        return None
