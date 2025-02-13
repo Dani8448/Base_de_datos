@@ -70,3 +70,17 @@ def ejecutar_consulta(query, parametros=()):
     except sqlite3.Error as e:
         print(f"Error en la consulta: {e}")
         return None
+# CRUD Supervivientes
+def insertar_superviviente(nombre, edad, genero, rol, estado):
+    ejecutar_consulta("INSERT INTO Supervivientes (nombre, edad, genero, rol, estado) VALUES (?, ?, ?, ?, ?)", 
+                      (nombre, edad, genero, rol, estado))
+
+def leer_supervivientes():
+    return ejecutar_consulta("SELECT * FROM Supervivientes")
+
+def actualizar_superviviente(id, nombre, edad, genero, rol, estado):
+    ejecutar_consulta("UPDATE Supervivientes SET nombre=?, edad=?, genero=?, rol=?, estado=? WHERE id=?", 
+                      (nombre, edad, genero, rol, estado, id))
+
+def eliminar_superviviente(id):
+    ejecutar_consulta("DELETE FROM Supervivientes WHERE id=?", (id,))
