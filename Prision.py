@@ -98,3 +98,18 @@ def actualizar_suministro(id, nombre, cantidad, tipo, id_superviviente):
 
 def eliminar_suministro(id):
     ejecutar_consulta("DELETE FROM Suministros WHERE id=?", (id,))
+
+# CRUD Vehículos
+def insertar_vehiculo(marca, modelo, ano, id_superviviente):
+    ejecutar_consulta("INSERT INTO Vehiculos (marca, modelo, ano, id_superviviente) VALUES (?, ?, ?, ?)", 
+                      (marca, modelo, ano, id_superviviente))
+
+def leer_vehiculos():
+    return ejecutar_consulta("SELECT * FROM Vehiculos")
+
+def actualizar_vehiculo(id, marca, modelo, ano, id_superviviente):
+    ejecutar_consulta("UPDATE Vehiculos SET marca=?, modelo=?, ano=?, id_superviviente=? WHERE id=?", 
+                      (marca, modelo, ano, id_superviviente, id))
+
+def eliminar_vehiculo(id):
+    ejecutar_consulta("DELETE FROM Vehiculos WHERE id=?", (id,))
