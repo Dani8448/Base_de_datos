@@ -128,3 +128,51 @@ def actualizar_arma(id, tipo, modelo, municion, id_superviviente):
 
 def eliminar_arma(id):
     ejecutar_consulta("DELETE FROM Armas WHERE id=?", (id,))
+
+# Menú interactivo
+def menu():
+    while True:
+        print("\nMenú principal:")
+        print("1. Insertar superviviente")
+        print("2. Ver supervivientes")
+        print("3. Actualizar superviviente")
+        print("4. Eliminar superviviente")
+        print("5. Salir")
+        
+        opcion = input("Elige una opción: ")
+        
+        if opcion == "1":
+            nombre = input("Nombre: ")
+            edad = int(input("Edad: "))
+            genero = input("Género: ")
+            rol = input("Rol: ")
+            estado = input("Estado: ")
+            insertar_superviviente(nombre, edad, genero, rol, estado)
+            print("Superviviente agregado.")
+        
+        elif opcion == "2":
+            supervivientes = leer_supervivientes()
+            for s in supervivientes:
+                print(s)
+        
+        elif opcion == "3":
+            id = int(input("ID del superviviente: "))
+            nombre = input("Nuevo nombre: ")
+            edad = int(input("Nueva edad: "))
+            genero = input("Nuevo género: ")
+            rol = input("Nuevo rol: ")
+            estado = input("Nuevo estado: ")
+            actualizar_superviviente(id, nombre, edad, genero, rol, estado)
+            print("Superviviente actualizado.")
+        
+        elif opcion == "4":
+            id = int(input("ID del superviviente a eliminar: "))
+            eliminar_superviviente(id)
+            print("Superviviente eliminado.")
+        
+        elif opcion == "5":
+            print("Saliendo del programa.")
+            break
+        
+        else:
+            print("Opción no válida. Inténtalo de nuevo.")
