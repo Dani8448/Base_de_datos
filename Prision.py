@@ -84,3 +84,17 @@ def actualizar_superviviente(id, nombre, edad, genero, rol, estado):
 
 def eliminar_superviviente(id):
     ejecutar_consulta("DELETE FROM Supervivientes WHERE id=?", (id,))
+# CRUD Suministros
+def insertar_suministro(nombre, cantidad, tipo, id_superviviente):
+    ejecutar_consulta("INSERT INTO Suministros (nombre, cantidad, tipo, id_superviviente) VALUES (?, ?, ?, ?)", 
+                      (nombre, cantidad, tipo, id_superviviente))
+
+def leer_suministros():
+    return ejecutar_consulta("SELECT * FROM Suministros")
+
+def actualizar_suministro(id, nombre, cantidad, tipo, id_superviviente):
+    ejecutar_consulta("UPDATE Suministros SET nombre=?, cantidad=?, tipo=?, id_superviviente=? WHERE id=?", 
+                      (nombre, cantidad, tipo, id_superviviente, id))
+
+def eliminar_suministro(id):
+    ejecutar_consulta("DELETE FROM Suministros WHERE id=?", (id,))
