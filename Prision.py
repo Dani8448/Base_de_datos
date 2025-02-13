@@ -176,3 +176,8 @@ def menu():
         
         else:
             print("Opción no válida. Inténtalo de nuevo.")
+
+# Ejecutar la creación de las tablas y mostrar el menú si se ejecuta directamente
+if __name__ == "__main__":
+    crear_tablas()
+    menu()
