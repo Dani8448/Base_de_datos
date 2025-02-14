@@ -2,16 +2,16 @@
 
 El programa tiene un menú interactivo que se muestra en la consola cuando lo ejecutas. Te permite hacer varias cosas:
 
-1. **Crear registros (Create):**
+1. **Crear registros:**
    - Puedes añadir nuevos datos a las tablas. Por ejemplo, si es un sistema de biblioteca, puedes agregar nuevos libros, usuarios o préstamos.
 
-2. **Leer registros (Read):**
+2. **Leer registros:**
    - Puedes ver los datos que ya están en las tablas. Por ejemplo, puedes listar todos los libros disponibles o ver qué libros ha prestado un usuario.
 
-3. **Actualizar registros (Update):**
+3. **Actualizar registros:**
    - Si hay algún error o quieres cambiar algo, puedes modificar los datos existentes. Por ejemplo, cambiar el correo de un usuario o marcar un libro como devuelto.
 
-4. **Eliminar registros (Delete):**
+4. **Eliminar registros:**
    - Si ya no necesitas un registro, puedes eliminarlo. Por ejemplo, borrar un usuario que ya no usa el sistema.
 
 5. **Salir:**
