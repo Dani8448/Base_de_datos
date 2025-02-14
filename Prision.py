@@ -60,7 +60,6 @@ conexion.commit()
 
 # Función genérica para ejecutar consultas con control de transacciones
 def ejecutar_consulta(query, parametros=()):
-    conexion = conectar_bd()
     try:
         with conexion:  # Maneja automáticamente el commit y el rollback en caso de error
             cursor = conexion.cursor()
@@ -179,5 +178,4 @@ def menu():
 
 # Ejecutar la creación de las tablas y mostrar el menú si se ejecuta directamente
 if __name__ == "__main__":
-    crear_tablas()
     menu()
